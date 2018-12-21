@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HangMan-Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Ultra" rel="stylesheet">
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+    <script src="assets/javascript/game.js"></script>
+
+</head>
+
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>HangMan-Game</h1>
+                <h2><label id="hideKey">Press any key to play</label></h2> <br>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-3">
+                <div class="animation">
+                    <canvas id="stickman">This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-12 bg-dark" id="gameguess">
+                         <label id="guessWord"></label>
+                    </div>
+                </div>
+                
+                <div class="row" id="contents">
+                    <div class="col-6">
+                        <span>Used Characters:</span>
+                    </div>
+                    <div class="col-6">
+                        <label id="usedChar"></label>
+                    </div>
+                    <div class="col-6">
+                        <span> Remaining Chances:</span>
+                        </div>
+                    <div class="col-6">
+                        <label id="chancesLeft"> </label>
+                    </div>
+                    <div class="col-12 text-center">
+                        <span><label id="resultMsg"></label></span> 
+                    </div>
+                    <div class="col-12">
+                        <button id="playBtn">Play Again</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+
+            </div>
+        </div>
+
+        <!-- <div class="row">
+
+                <div class="col-3">
+
+                    </div>
+            <div class="col-6" id="contents">
+
+                <div class="row">
+                    <div class="col-6">
+                        <span>Used Characters:</span>
+                    </div>
+                    <div class="col-6">
+                        <label id="usedChar">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-6">
+                        <span> Remaining Chances:</span>
+                    </div>
+                    <div class="col-6">
+                        <label id="chancesLeft"> </label>
+                    </div>
+                </div>
+                <div class="row text-center" >
+                    <div class="col-12">
+                        <span><label id="resultMsg"></label></span>
+                    </div>
+                    <div class="col-12">
+                        <button id="playBtn">Play Again</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+
+                </div>
+        </div> -->
+    </div>
+
+   
+    <!-- will add the background music with hidden true property indicates to not show the media player's interface.-->
+    <!-- <embed loop="true" src="./assets/music/jingle_bells.mp3" hidden="true" type="video/quicktime" autostart="1"></embed> -->
+
+</html>

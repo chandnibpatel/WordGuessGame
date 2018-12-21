@@ -1,0 +1,44 @@
+body{
+    background-image: url(../images/bgx.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
+    width: 100%;
+    height: 100%;
+    
+    text-align: center;
+}
+h1{
+    font-size: 50px;
+    color: orange; 
+    font-family: 'Ultra', serif;
+    /* font-display: url(../images/bg.jpg); */
+}
+
+#hideKey{
+    font-size: 45px;
+    color: white;
+}
+
+#gameguess{
+    font-size: 35px;
+    color: orange;
+}
+
+#contents{
+    font-size: 20px;
+    color: green;
+    text-align: left;
+    margin-top:20px;
+}
+#resultMsg{
+    color:orange;
+    font-size: 40px;
+}
+#playBtn{
+    background-color: orange;
+    color: white;
+}
+#stickman{
+    color: orange;
+}
