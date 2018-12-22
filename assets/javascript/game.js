@@ -7,6 +7,7 @@ var playWord = "";
 var usedChars="";
 var totalChance=0;
 var mySound;
+var gameOverSound;
 
 //Declaring Arrays
 var charArr = [];
@@ -22,15 +23,16 @@ function startGame() {
   document.getElementById("playBtn").hidden = false;
   document.getElementById("resultMsg").hidden=true;
   usedChars = "";
-
-  mySound.play();
-
+  mySound.stop();
+  gameOverSound.stop()
+  
   //Use the below logic to pic the random word from the array of game word
   var randomNo = Math.random();
   playWord = gameWords[Math.floor(randomNo * gameWords.length)];
 
   //Total chances are 10 while starting the game
   totalChance=10;
+  canvas();
   for (i = 0; i < playWord.length; i++) {
       charArr[i]="_";
   }
@@ -72,18 +74,21 @@ function displayStat() {
   {
     document.getElementById("resultMsg").hidden=false;
       document.getElementById("resultMsg").innerHTML="You loose the Game!!";  
+      gameOverSound.play();
   }
   if((totalChance >0) && (dashWord.indexOf("_")==-1) )
   {
     document.getElementById("resultMsg").hidden=false;
       document.getElementById("resultMsg").innerHTML="You win the Game !!";   
+      mySound.play();
+
   }
   
 }
 // Hangman
 var animate = function () {
   var drawMe = totalChance ;
-  drawArray[drawMe]();
+   drawArray[drawMe]();
 }
 
 
@@ -98,6 +103,7 @@ canvas =  function(){
 };
 
   head = function(){
+    
     myStickman = document.getElementById("stickman");
     context = myStickman.getContext('2d');
     context.beginPath();
@@ -116,6 +122,7 @@ canvasClear=function(){
 var myStickman = document.getElementById("stickman");
  var context = myStickman.getContext('2d');
 context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+
 }
  frame1 = function() {
    draw (0, 150, 150, 150);
@@ -172,6 +179,7 @@ function sound(src) {
 }
 
 function playAgain(){
+  
   startGame();
   canvasClear();
   displayStat();
@@ -184,6 +192,7 @@ window.onload=function (e){
     document.getElementById("gameguess").hidden = true;
     document.getElementById("playBtn").hidden = true;
     mySound = new sound("./assets/music/jingle_bells.mp3");
+    gameOverSound=new sound("./assets/music/game_over.mp3");
     $("#playBtn").on("click",playAgain);
     
 }
@@ -193,7 +202,6 @@ document.onkeyup = function (event) {
     userKeyCode=event.keyCode;
     if (firstTime == true) {
         startGame();
-        canvas();
         firstTime = false;
     } else {
       if ((userKeyCode > 64 && userKeyCode < 91) || (userKeyCode > 96 && userKeyCode < 123))
